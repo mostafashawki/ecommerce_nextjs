@@ -1,10 +1,10 @@
 "use client";
 import Link from "next/link";
-import { useCart } from "@/context/cart";
+import useCartStore from "@/store/cart";
 import { useEffect } from "react";
 
 export default function UserStripeSuccess() {
-  const { clearCart } = useCart();
+  const { clearCart } = useCartStore();
 
   useEffect(() => {
     clearCart();

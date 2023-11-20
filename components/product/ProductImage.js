@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useProduct } from "@/context/product";
+import useProductStore from "@/store/product";
 import Modal from "@/components/Modal";
 
 export default function ProductImage({ product }) {
@@ -8,7 +8,7 @@ export default function ProductImage({ product }) {
     showImagePreviewModal,
     currentImagePreviewUrl,
     openImagePreviewModal,
-  } = useProduct();
+  } = useProductStore();
 
   const showImage = (src, title) => (
     <Image

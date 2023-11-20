@@ -1,10 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
-import { useCart } from "context/cart";
+import useCartStore from "store/cart";
 import Link from "next/link";
 
 export default function AddToCart({ product, reviewAndCheckout = true }) {
-  const { addToCart, updateQuantity, removeFromCart, cartItems } = useCart();
+  const { addToCart, updateQuantity, removeFromCart, cartItems } = useCartStore();
 
   // find the product in cartItems if it exist
   const existingProduct = cartItems?.find((item) => item?._id === product?._id);

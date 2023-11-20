@@ -4,17 +4,17 @@ import { priceRanges } from "@/utils/filterData";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Stars from "@/components/product/Stars";
-import { useCategory } from "@/context/category";
-import { useTag } from "@/context/tag";
-import { useProduct } from "@/context/product";
+import useCategoryStore from "@/store/category";
+import useTagStore from "@/store/tag";
+import useProductStore from "@/context/product";
 
 export default function ProductFilter({ searchParams }) {
   const pathname = "/shop";
   const { minPrice, maxPrice, ratings, category, tag, brand } = searchParams;
   // context
-  const { fetchCategoriesPublic, categories } = useCategory();
-  const { fetchTagsPublic, tags } = useTag();
-  const { fetchBrands, brands } = useProduct();
+  const { fetchCategoriesPublic, categories } = useCategoryStore();
+  const { fetchTagsPublic, tags } = useTagStore();
+  const { fetchBrands, brands } = useProductStore();
 
   useEffect(() => {
     fetchCategoriesPublic();

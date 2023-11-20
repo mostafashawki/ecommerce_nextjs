@@ -1,6 +1,6 @@
 "use client";
 import { useEffect } from "react";
-import { useProduct } from "@/context/product";
+import useProductStore from "@/store/product";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import Image from "next/image";
 import Pagination from "@/components/product/Pagination";
@@ -12,7 +12,7 @@ export default function ProductList() {
     totalPages,
     fetchProducts,
     setUpdatingProduct,
-  } = useProduct();
+  } = useProductStore();
 
   const router = useRouter();
   const pathname = usePathname();

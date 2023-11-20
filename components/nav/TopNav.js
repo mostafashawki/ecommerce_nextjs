@@ -1,20 +1,20 @@
 "use client";
 import Link from "next/link";
 import { useSession, signOut } from "next-auth/react";
-import { useProduct } from "@/context/product";
+import useProductStore from "@/store/product";
 import { BsFillCartCheckFill } from "react-icons/bs";
-import { useCart } from "@/context/cart";
+import useCartStore from "@/store/cart";
 
 export default function TopNav() {
   //to show / hide things based on user session
   const { data, status } = useSession();
-  const { cartItems } = useCart();
+  const { cartItems } = useCartStore();
   // console.log(data, status);
   const {
     productSearchQuery,
     setProductSearchQuery,
     fetchProductSearchResults,
-  } = useProduct();
+  } = useProductStore();
 
   return (
     <nav className="nav shadow p-2 justify-content-between mb-3">

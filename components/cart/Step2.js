@@ -1,12 +1,12 @@
 import { useSession } from "next-auth/react";
 import Link from "next/link";
-import { useCart } from "@/context/cart";
+import useCartStore from "@/store/cart";
 import OrderSummary from "@/components/cart/OrderSummary";
 
 export default function Step2({ onPrevStep, onNextStep }) {
   const { data, status, update } = useSession();
   // update({user: {...data.user, address: "123 Main St"}})
-  const { couponCode, setCouponCode, handleCoupon } = useCart();
+  const { couponCode, setCouponCode, handleCoupon } = useCartStore();
 
   if (status !== "authenticated") {
     return (

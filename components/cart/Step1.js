@@ -1,11 +1,11 @@
-import { useCart } from "@/context/cart";
+import useCartStore from "@/store/cart";
 import Image from "next/image";
 import Link from "next/link";
 import AddToCart from "@/components/product/AddToCart";
 import OrderSummary from "@/components/cart/OrderSummary";
 
 export default function Step1({ onNextStep }) {
-  const { cartItems } = useCart();
+  const { cartItems } = useCartStore();
 
   return (
     <div className="container">

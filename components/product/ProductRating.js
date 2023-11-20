@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { toast } from "react-hot-toast";
 import { useRouter, usePathname } from "next/navigation";
-import { useProduct } from "@/context/product";
+import useProductStore from "@/store/product";
 import Stars from "@/components/product/Stars";
 import { calculateAverageRating } from "@/utils/helpers";
 import Modal from "@/components/Modal";
@@ -17,7 +17,7 @@ export default function ProductRating({ product, leaveARating = true }) {
     setCurrentRating,
     comment,
     setComment,
-  } = useProduct();
+  } = useProductStore();
 
   const [productRatings, setProductRatings] = useState(product?.ratings || []);
   const [averageRating, setAverageRating] = useState(0);

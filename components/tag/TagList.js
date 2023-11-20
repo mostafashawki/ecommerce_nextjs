@@ -1,9 +1,9 @@
 "use client";
 import { useEffect } from "react";
-import { useTag } from "@/context/tag";
+import useTagStore from "@/store/tag";
 
 export default function TagList() {
-  const { tags, fetchTags, setUpdatingTag } = useTag();
+  const { tags, fetchTags, setUpdatingTag } = useTagStore();
 
   useEffect(() => {
     fetchTags();
