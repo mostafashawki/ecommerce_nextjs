@@ -1,7 +1,7 @@
 "use client";
 import { useEffect } from "react";
-import { useTag } from "@/context/tag";
-import { useCategory } from "@/context/category";
+import useTagStore from "@/store/tag";
+import useCategoryStore from "@/store/category";
 import { useSession } from "next-auth/react";
 
 export default function TagCreate() {
@@ -16,11 +16,11 @@ export default function TagCreate() {
     createTag,
     updateTag,
     deleteTag,
-  } = useTag();
+  } = useTagStore();
 
   const { status } = useSession();
 
-  const { fetchCategories, categories } = useCategory();
+  const { fetchCategories, categories } = useCategoryStore();
 
   useEffect(() => {
     if (status === "authenticated") {

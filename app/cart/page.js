@@ -5,11 +5,11 @@ import Step2 from "@/components/cart/Step2";
 import Step3 from "@/components/cart/Step3";
 import { GoCheckCircleFill } from "react-icons/go";
 import Link from "next/link";
-import { useCart } from "@/context/cart";
+import useCartStore from "@/store/cart";
 
 export default function Cart() {
-  // context
-  const { cartItems } = useCart();
+  // store
+  const { cartItems } = useCartStore();
   // state
   const [step, setStep] = useState(1);
 

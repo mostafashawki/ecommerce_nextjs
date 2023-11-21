@@ -1,8 +1,8 @@
 "use client";
-import { useProduct } from "@/context/product";
+import useProductStore from "@/store/product";
 
 export default function ProductImage({ children }) {
-  const { closeModal } = useProduct();
+  const { closeModal } = useProductStore();
 
   return (
     <>

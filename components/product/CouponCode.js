@@ -1,10 +1,10 @@
 "use client";
 import { useEffect } from "react";
-import { useCart } from "@/context/cart";
+import useCartStore from "@/store/cart";
 import { useSearchParams } from "next/navigation";
 
 export default function CouponCode({ product }) {
-  const { handleCoupon, setCouponCode, percentOff, validCoupon } = useCart();
+  const { handleCoupon, setCouponCode, percentOff, validCoupon } = useCartStore();
   const searchParams = useSearchParams();
   const code = searchParams.get("couponCode");
 

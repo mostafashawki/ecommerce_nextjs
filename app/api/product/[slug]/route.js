@@ -7,8 +7,8 @@ export async function GET(req, context) {
 
   try {
     const product = await Product.findOne({ slug: context.params.slug })
-      .populate("category", "name slug")
-      .populate("tags", "name slug")
+      .populate("category", "name slug") // before accessing category and tags, make sure .populate() is used in api routes and ref: 'Category' models are imported in `Product` model
+      .populate("tags", "name slug") // populate two fields `name` and `slug` from `Category` model
       .populate({
         path: "ratings.postedBy",
         model: "User",

@@ -1,8 +1,8 @@
 "use client";
 import { useEffect } from "react";
-import { useProduct } from "@/context/product";
-import { useCategory } from "@/context/category";
-import { useTag } from "@/context/tag";
+import useProductStore from "@/store/product";
+import useCategoryStore from "@/store/category";
+import  useTagStore  from "@/store/tag";
 
 export default function ProductCreate() {
   const {
@@ -17,10 +17,10 @@ export default function ProductCreate() {
     setUploading,
     uploadImages,
     deleteImage,
-  } = useProduct();
+  } = useProductStore();
 
-  const { categories, fetchCategories } = useCategory();
-  const { tags, fetchTags } = useTag();
+  const { categories, fetchCategories } = useCategoryStore();
+  const { tags, fetchTags } = useTagStore();
 
   const imagePreviews = updatingProduct
     ? updatingProduct?.images ?? []

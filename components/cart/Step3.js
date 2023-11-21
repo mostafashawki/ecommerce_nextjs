@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { useCart } from "@/context/cart";
+import useCartStore from "@/store/cart";
 import OrderSummary from "@/components/cart/OrderSummary";
 import toast from "react-hot-toast";
 
 export default function Step3({ onPrevStep }) {
-  const { cartItems, validCoupon, couponCode } = useCart();
+  const { cartItems, validCoupon, couponCode } = useCartStore();
   // state
   const [loading, setLoading] = useState(false);
 

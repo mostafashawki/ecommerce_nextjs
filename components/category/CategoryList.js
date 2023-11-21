@@ -1,9 +1,9 @@
 "use client";
 import { useEffect } from "react";
-import { useCategory } from "@/context/category";
+import useCategoryStore from "@/store/category";
 
 export default function CategoryList() {
-  const { fetchCategories, categories, setUpdatingCategory } = useCategory();
+  const { fetchCategories, categories, setUpdatingCategory } = useCategoryStore();
 
   useEffect(() => {
     fetchCategories();

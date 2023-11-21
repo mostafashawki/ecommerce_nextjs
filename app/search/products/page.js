@@ -2,14 +2,14 @@
 import { useEffect } from "react";
 import ProductCard from "@/components/product/ProductCard";
 import { useSearchParams } from "next/navigation";
-import { useProduct } from "@/context/product";
+import useProductStore from "@/store/product";
 
 export default function SearchProductsPage() {
   const {
     setProductSearchQuery,
     setProductSearchResults,
     productSearchResults,
-  } = useProduct();
+  } = useProductStore();
 
   const productSearchParams = useSearchParams();
   const query = productSearchParams.get("productSearchQuery");

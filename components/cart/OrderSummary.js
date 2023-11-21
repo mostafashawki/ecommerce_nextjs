@@ -1,8 +1,8 @@
-import { useCart } from "@/context/cart";
+import useCartStore from "@/store/cart";
 import Image from "next/image";
 
 export default function OrderSummary() {
-  const { cartItems } = useCart();
+  const { cartItems } = useCartStore();
 
   const calculateTotal = () => {
     return cartItems?.reduce(
