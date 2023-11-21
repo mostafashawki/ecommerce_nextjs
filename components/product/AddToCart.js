@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import useCartStore from "store/cart";
+import useCartStore from "@/store/cart";
 import Link from "next/link";
 
 export default function AddToCart({ product, reviewAndCheckout = true }) {

@@ -5,10 +5,7 @@ import TopNav from "@/components/nav/TopNav";
 import { Toaster } from "react-hot-toast";
 // to wrap the entire app with session provider
 import { SessionProvider } from "next-auth/react";
-// import { CategoryProvider } from "@/context/category";
-// import { TagProvider } from "@/context/tag";
-import { ProductProvider } from "@/context/product";
-import { CartProvider } from "@/context/cart";
+
 
 export default function RootLayout({ children }) {
   return (
