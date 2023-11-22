@@ -22,7 +22,7 @@ const orderSchema = new mongoose.Schema(
     chargeId: String,
     payment_intent: String,
     receipt_url: String,
-    refunded: Boolean,
+    refunded: Boolean, // as an admin, you can refund the payment
     status: String,
     amount_captured: Number,
     currency: String,
@@ -41,7 +41,7 @@ const orderSchema = new mongoose.Schema(
       ref: "User",
     },
     cartItems: [cartItemSchema],
-    delivery_status: {
+    delivery_status: { // this is for the admin to update the delivery status
       type: String,
       default: "Not Processed",
       enum: [

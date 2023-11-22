@@ -42,7 +42,7 @@ const productSchema = new mongoose.Schema(
       unique: true,
       minLength: 1,
       maxLength: 160,
-      text: true, // for text search
+      text: true, // indexed for text search
     },
     slug: {
       type: String,
