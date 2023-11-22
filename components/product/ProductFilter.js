@@ -6,12 +6,12 @@ import { useRouter } from "next/navigation";
 import Stars from "@/components/product/Stars";
 import useCategoryStore from "@/store/category";
 import useTagStore from "@/store/tag";
-import useProductStore from "@/context/product";
+import useProductStore from "@/store/product";
 
 export default function ProductFilter({ searchParams }) {
   const pathname = "/shop";
   const { minPrice, maxPrice, ratings, category, tag, brand } = searchParams;
-  // context
+  // store
   const { fetchCategoriesPublic, categories } = useCategoryStore();
   const { fetchTagsPublic, tags } = useTagStore();
   const { fetchBrands, brands } = useProductStore();
