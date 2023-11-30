@@ -35,7 +35,7 @@ This is a comprehensive e-commerce platform built using Next.js 13 and React 18,
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/mostafashawki/ecommerce.git
+   git clone https://github.com/mostafashawki/ecommerce_nextjs.git
    ```
 2. Install dependencies:
    ```bash
